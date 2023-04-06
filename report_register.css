@@ -1,0 +1,97 @@
+.leftMenu ul li:hover {
+    background: rgb(144, 246, 250);
+}
+H1{
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0%;
+}
+H4{
+    margin-left: 13%;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0%;
+}
+.title2{
+    margin-left: 13%;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 0%;
+}
+body{
+   color: black;
+   background-color: rgb(179, 217, 255);
+}
+.day{
+    margin-left:5%;
+    margin-top: 0%;
+}
+.H5{
+    margin-left: 50px;
+    margin-top: 0%;
+}
+.lop{
+    text-align: center;
+    font-weight: bold;
+    font: size 60px;
+    margin-top: 0%;
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin-top: 0%;
+}
+.table{
+    width: 100%;
+    text-align: center;
+    margin-top: 0%;
+}
+p{
+    font-style: italic;
+    margin-top: 0%;
+}
+.title{
+    text-align: center;
+}
+H2{
+    text-align: left;
+    margin-left: 10%;
+    color: rgb(47, 47, 255);
+    
+}
+.sign{
+    font-style: italic;
+    margin-left: 6%;
+    margin-top: 0%;
+}
+.signb{
+    font-style: italic;
+    margin-left: 2%;
+    margin-top: 0%;
+}
+.a{
+    text-align: center;
+}
+.b{
+    margin-left: 0%;
+}
+.c{
+    margin-left: 5%;
+}
+
+body{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right:5%;
+}
+.image{
+    margin-left: 30%;
+}
+.title{
+    text-align: center;
+    font-weight: bold;
+}
+.fa-diamond{
+    margin-left: 50%;
+    margin-top: -1.5%;
+}
