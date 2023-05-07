@@ -82,7 +82,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
             <div id="contentWrapper">
                 <div id="mainContent">
                     <div class="group-box">
-                        <div class="title"> <b>TẠO LỚP HỌC</b> </div>
+                        <div class="title"> <b>SỬA LỚP HỌC</b> </div>
                         <div class="container">
                             <form action="repair_class.php" method="POST" enctype="multipart/form-data">
                                 <div class="user-details">
@@ -103,7 +103,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <option value="<?php echo $row['matd'] ?>"><?php echo $row['matd'] ?></option>
                                             <?php while($rows = mysqli_fetch_array($query_exe1)) {
                                                ?>
-                                                <option value="<?php echo $rows['matd'] ?>"><?= $rows['matd'] ?></option>
+                                                <option value="<?php echo $rows['matd'] ?>"><?= $rows['tentd'] ?></option>
                                             <?php } ?>
                                             <option value="">Chọn trình độ</option>
                                         </select>
@@ -126,9 +126,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                     <div class="input-box">
                                         <span class="details">GIẢNG VIÊN DẠY</span>
                                         <select class="list" name="macb">
-                                           <option value="<?php echo "CB",$row['sttkhoa'] ?>"><?php echo "CB",$row['sttkhoa'] ?></option>
+                                           <option value="<?php echo "CB",$row['macb'] ?>"><?php echo $row['macb'] ?></option>
                                             <?php while($rows = mysqli_fetch_array($query_exe2)) {?>
-                                                <option value="<?php echo "CB",$rows['macb'] ?>"><?="CB",$rows['macb'] ?></option>
+                                                <option value="<?php echo $rows['macb'] ?>"><?="CB",$rows['macb']," - ",$rows['hoten'] ?></option>
                                             <?php } ?>
                                             <option value="">Chọn giảng viên</option>
                                         </select>
@@ -156,12 +156,12 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="hocphi.php">HỌC PHÍ</a></li> 
                                 <li> <a href="update_timetable.php">LỊCH HỌC</a></li>
                                 <li> <a href="update_infor_teacher.php">GIẢNG VIÊN</a></li> 
-                                <li> <a href="register_student.php">ĐĂNG KÍ HỌC</a></li>  
-                                <li> <a href="list_student.php">DANH SÁCH HỌC VIÊN</a></li> 
-                                <li> <a href="danhsachphieuthu.php">XUẤT PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">THỐNG KÊ LỚP HỌC</a></li>
-                                <li> <a href="addr.php">LIÊN HỆ</a> </li>
-                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>     
+                                <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
+                                <li> <a href="list_student.php">HỌC VIÊN</a></li> 
+                                <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
+                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>      
                             </ul>
                         </div>
                     </div>

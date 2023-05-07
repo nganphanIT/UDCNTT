@@ -23,7 +23,7 @@
                 <img id="logo2" src="./img/logo2.png">
             </div>
             <div id="nav">         
-            </div>         
+            </div>        
             <div id="contentWrapper">
                 <div id="mainContent">
                     <div class="group-box">
@@ -35,12 +35,14 @@
                             $sql_sms = "select * from sms";
                             $result_sms = mysqli_query($conn, $sql_sms);
                             while ($row_sms = mysqli_fetch_array($result_sms)){
-                                $title = $row_sms['title'];  
+                                $id = $row_sms['id'];  
+                                $title = $row_sms['title']; 
                                 $content = $row_sms['content'];  
                                 ?> 
-                                <div>
-                                    <h3><?= $row_sms['title']?><h4><?= $row_sms['content']?></h4></h3>
-                                </div>
+                                    <div>
+                                        <h3><?= $row_sms['title']?><h4><?= $row_sms['content']?></h4></h3>
+                                        <i onclick='deleteSMS(this,<?= $row_sms["id"] ?>)' class="material-icons" style="font-size:24px;color:black">delete</i>                              
+                                    </div>
                                 <?php   
 
                             }
@@ -49,8 +51,10 @@
                     <div class="big_title">LỊCH KHAI GIẢNG</div>
                     <div class="group-box">
                         <div class="title"> <b>ỨNG DỤNG CNTT CƠ BẢN</b> </div>
-                        <h3 class="one">ỨNG DỤNG CNTT CƠ BẢN: 56 TIẾT</h3>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <h3 class="one">ỨNG DỤNG CNTT CƠ BẢN  </h3> 
+                        <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
+                        <p3 class="reone">56 tiết</p3> <br>
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  $conn = mysqli_connect("localhost", "root", "", "udcntt");
@@ -81,7 +85,7 @@
                         <p3 class="three">&diams;  Đặc biệt giảm thêm&nbsp;</p3>
                         <p3 class="red"> 50.000đ khi đăng kí theo nhóm từ 3 học viên trở lên&nbsp;</p3>
                         <p3 class="four"> cho học viên cũ</p3> <br>
-                        <p3 class="F">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b>&nbsp;</p3> </br> </br>
+                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <?php
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "SELECT * FROM sms";
@@ -196,8 +200,10 @@
                     </div>
                     <div class="group-box">
                     <div class="title"> <b>ỨNG DỤNG CNTT NÂNG CAO</b> </div>
-                        <h3 class="one">ỨNG DỤNG CNTT NÂNG CAO: 56 TIẾT</h3>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <h3 class="one">ỨNG DỤNG CNTT NÂNG CAO</h3>
+                        <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
+                        <p3 class="reone">56 tiết</p3> <br>
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  
@@ -217,7 +223,6 @@
                         </p3> </br> 
                         <p3 class="two"> &diams;  Nội dung học:&nbsp;</p3> 
                         <p3 class="four"> Word - Excel - PowerPonit nâng cao</p3> </br>
-                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <p3 class="two"> &diams;  Điều kiện bắt buộc:&nbsp;</p3> 
                         <p3 class="red"> HV cần bổ sung Chứng chỉ Ứng Dụng CNTT Cơ Bản (photo công chứng) khi đăng kí</p3> </br>
                         <p3 class="two">&diams;  Ưu đãi khi ghi danh online + hoàn tất học phí&nbsp;</p3>
@@ -230,7 +235,8 @@
                         <p3 class="four"> cho học viên cũ</p3> <br>
                         <p3 class="three">&diams;  Đặc biệt giảm thêm&nbsp;</p3>
                         <p3 class="red"> 50.000đ khi đăng kí theo nhóm từ 3 học viên trở lên&nbsp;</p3>
-                        <p3 class="four"> cho học viên cũ</p3> <br> </br>
+                        <p3 class="four"> cho học viên cũ</p3> <br> 
+                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <?php
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "SELECT * FROM sms";
@@ -345,8 +351,10 @@
                     </div>
                     <div class="group-box">
                     <div class="title"> <b>ÔN THI CNTT CƠ BẢN VÀ NÂNG CAO</b> </div>
-                        <h3 class="one">ÔN THI CNTT CƠ BẢN VÀ NÂNG CAO: 25 TIẾT</h3>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <h3 class="one">ÔN THI CNTT CƠ BẢN VÀ NÂNG CAO</h3>
+                        <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
+                        <p3 class="reone">25 tiết</p3> <br>
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  
@@ -496,8 +504,8 @@
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
-                                <li> <a href="signup.php">ĐĂNG KÍ</a></li>  
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>    
                             </ul>
                         </div>

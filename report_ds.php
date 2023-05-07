@@ -31,8 +31,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
         <div >
             <table class="title_table">
                 <tr>
-                    <td class="b">STT</td> 
-                    <td class="a">STT LỚP</td> 
+                    <td class="a">STT</td> 
+                    <td class="b">STT LỚP</td> 
                     <td class="c">HỌ VÀ TÊN</td>
                     <td class="d">MSSV</td>
                     <td class="e" >NGÀY SINH</td> 
@@ -64,15 +64,15 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                             ?>
                                 <div >
                                     <table class="content" >
-                                            <td class="b"><?= $row['stthv'] ?></td>
-                                            <td class="a"><?=$row1['matd'].$row['sttlop'] ?></td>
+                                            <td class="a1"><?= $row['stthv'] ?></td>
+                                            <td class="b"><?=$row1['matd'].$row['sttlop'] ?></td>
                                             <td class="c1"><?= $row['tenhv'] ?></td>
-                                            <td class="d" ><?= $row['mssv'] ?></td>
+                                            <td class="d1" ><?= $row['mssv'] ?></td>
                                             <td class="e"><?= $row['ngaysinh'] ?></td>
                                             <td class="f1"><?= $row['noisinh'] ?></td>
                                             <td class="g"><?= $gender ?></td>
                                             <td class="h1"><?= $row['diachi'] ?></td>
-                                            <td class="i"><?= $row['sdt'] ?></td>
+                                            <td class="i1"><?= $row['sdt'] ?></td>
                                             <td class="j1"><?= $row['email'] ?></td> 
                                         </tr>
                                     </table>

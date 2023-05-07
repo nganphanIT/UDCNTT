@@ -57,14 +57,17 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
             <div id="contentWrapper">
                 <div id="mainContent">
                     <div class="group-box">
-                        <div class="title"> <b>CẬP NHẬT LỊCH HỌC</b> </div>
+                        <div class="title"> <b>DANH SÁCH LỊCH HỌC</b> </div>
                         <div class="container">
+                        <span></span>
+                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm mã lớp ...">
                             <div class="lop">
                                 <table>
                                     <tr>
                                         <td class="a"> <h3> MÃ LỚP  </h3> </td>
                                         <td class="b"> <h3> THỨ </h3> </td>
                                         <td class="c"> <h3> BUỔI </h3> </td>
+                                        <td class="b"> <h3> PHÒNG </h3> </td>
                                        
                                     </tr>
                                 </table>
@@ -74,13 +77,23 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "select b.id as id_thu ,c.id as id_buoi , b.thu,c.buoi,d.matd,d.sttlop,c.gio_bd,c.gio_kt from lichhoc as a, thu as b, buoi as c, lop as d where a.thu=b.id and a.buoi=c.id and a.sttlop=d.sttlop";
                             $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) { ?>
+                            while ($row = mysqli_fetch_array($result)) {
+                                $sttlop=$row['sttlop']; ?>
                                 <div class="lop">
                                     <table>
                                         <tr>
                                             <td class="a"><?= $row['matd']. $row['sttlop']?></td>
                                             <td class="b"><?= $row['thu']?></td>
-                                            <td class="c"><?= $row['buoi']?></td>
+                                            <td class="c"><?= $row['buoi']."(".$row['gio_bd']."-".$row['gio_bd'].")"?></td>
+                                            <td class="b"><?php
+                                                $sql1 = "select * from lop where sttlop='$sttlop'";
+                                                $result1 = mysqli_query($conn, $sql1);
+                                                while ($row1 = mysqli_fetch_array($result1)){
+                                                    $sttp =$row1['sttp'];
+                                                     echo $sttp;
+                                                }
+                                               
+                                            ?></td>
                                         </tr> 
                                     </table>
                                 </div>
@@ -105,7 +118,6 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
                                 <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
                                 <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                                <li> <a href="list_student_teacher.php">HỌC VIÊN</a></li> 
                                 <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                             </ul>
@@ -119,5 +131,26 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                  </p>
             </div>
         </div> 
+        <script>
+             function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = document.getElementsByTagName("tr");
+            for (i = 0; i < tr.length-1; i++) {
+                td = tr[i+1].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent;
+                    console.log(txtValue.toUpperCase().search(filter));
+                    if (txtValue.toUpperCase().search(filter) > -1) {
+                        tr[i+1].style.display = "";
+                    } else {
+                        tr[i+1].style.display = "none";
+                    }
+                }
+            }
+        }
+        </script>
     </body>
 </html>

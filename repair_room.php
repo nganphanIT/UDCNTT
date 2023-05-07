@@ -92,12 +92,12 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="hocphi.php">HỌC PHÍ</a></li> 
                                 <li> <a href="update_timetable.php">LỊCH HỌC</a></li>
                                 <li> <a href="update_infor_teacher.php">GIẢNG VIÊN</a></li> 
-                                <li> <a href="register_student.php">ĐĂNG KÍ HỌC</a></li>  
-                                <li> <a href="list_student.php">DANH SÁCH HỌC VIÊN</a></li> 
-                                <li> <a href="danhsachphieuthu.php">XUẤT PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">THỐNG KÊ LỚP HỌC</a></li>
-                                <li> <a href="addr.php">LIÊN HỆ</a> </li>
-                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>   
+                                <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
+                                <li> <a href="list_student.php">HỌC VIÊN</a></li> 
+                                <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
+                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>  
                             </ul>
                         </div>
                     </div>

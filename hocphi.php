@@ -63,7 +63,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <select class="list" name="sttkhoa">
                                         <option value="">Chọn khóa</option>
                                             <?php while($rows = mysqli_fetch_array($query_exe)) {?>
-                                                <option value="<?=$rows['sttkhoa'] ?>"><?=$rows['sttkhoa'] ?></option>
+                                                <option value="<?=$rows['sttkhoa'] ?>"><?='Khóa ',$rows['sttkhoa'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -72,7 +72,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <select class="list" name="matd">
                                         <option value="">Chọn trình độ</option>
                                             <?php while($rows = mysqli_fetch_array($query_exe1)) {?>
-                                                <option value="<?= $rows['matd'] ?>"><?= $rows['matd'] ?></option>
+                                                <option value="<?= $rows['matd'] ?>"><?= $rows['tentd'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -82,7 +82,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                     </div>                                                               
                                 </div>
                                 <div class="button">
-                                    <input type="submit" name="submit" value="CẬP NHẬT">
+                                    <input type="submit" name="submit" value="THÊM">
                                 </div>
                             </form>
                             <div>
@@ -132,7 +132,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                             </ul>
                         </div>

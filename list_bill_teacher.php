@@ -68,7 +68,7 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                                 <td>
                                     <h3> TTTT </h3>
                                 </td>
-                                <td class="min1"></td>
+                                <td class="min1"> <h3> CHỨC NĂNG </h3></td>
                             </tr>
                         </table>
                     </div>
@@ -120,7 +120,6 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                         <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
                         <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
                         <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                        <li> <a href="list_student_teacher.php">HỌC VIÊN</a></li> 
                         <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
                         <li> <a href="login.php">ĐĂNG XUẤT</a></li>          
                     </ul>

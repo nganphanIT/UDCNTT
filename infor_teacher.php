@@ -192,6 +192,8 @@ if (isset($_POST["submit"])) {
                                             <input type="reset" name="reset" value="HỦY"> 
                                         </div> 
                                     </form>
+                                    <span></span>
+                                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm số điện thoại  ...">
                                     <div class="thongtin">
                                         <table>
                                             <tr>
@@ -245,7 +247,6 @@ if (isset($_POST["submit"])) {
                                 <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
                                 <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
                                 <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                                <li> <a href="list_student_teacher.php">HỌC VIÊN</a></li> 
                                 <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>         
                             </ul>
@@ -261,6 +262,25 @@ if (isset($_POST["submit"])) {
         </div> 
     </body>
     <script>
+         function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = document.getElementsByTagName("tr");
+            for (i = 0; i < tr.length-1; i++) {
+                td = tr[i+1].getElementsByTagName("td")[3];
+                if (td) {
+                    txtValue = td.textContent;
+                    console.log(txtValue.toUpperCase().search(filter));
+                    if (txtValue.toUpperCase().search(filter) > -1) {
+                        tr[i+1].style.display = "";
+                    } else {
+                        tr[i+1].style.display = "none";
+                    }
+                }
+            }
+        }
 		function displayImage(event) {
 			var image = document.getElementById('image-preview');
 			image.src = URL.createObjectURL(event.target.files[0]);

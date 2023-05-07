@@ -58,6 +58,6 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 <h4> <b>- Phái:</b> <?php if ($phai == 1) echo "Nam"; else echo "Nữ"; ?> </h4>
                 <h4> <b>- Địa chỉ  </b> <?php echo $diachi ?> </h4>
                 <h4> <b>- Email</b> <?php echo $email ?> </h4>
-                <!-- <h4> <b>- CCCD hoặc số hộ chiếu (nếu có):</b>  <?php echo $cccd ?></h4>           -->
+                
     </body>
     </html>

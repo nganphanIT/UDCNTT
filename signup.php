@@ -58,7 +58,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
             <div id="contentWrapper">
                 <div id="mainContent">
                     <div class="group-box">
-                        <div class="title"> <b>ĐĂNG KÍ</b> </div>
+                        <div class="title"> <b>TẠO TÀI KHOẢN</b> </div>
                         <form action=" " method = "POST">
                             <div class="input_box">
                               <input type="text" placeholder="Nhập tên đăng nhập..." name="username" required>
@@ -115,8 +115,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
-                                <li> <a href="login.php">ĐĂNG XUẤT</a></li> 
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                             </ul>
                         </div>
                     </div>

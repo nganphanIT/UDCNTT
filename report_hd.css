@@ -26,10 +26,12 @@ table{
     font-weight: bold;
 }
 H1{
+    margin-top: 0%;
     text-align: center;
     font-size: 40px;
 }
 H4{
+    margin-top: 0%;
     margin-left: 10%;
     font-size: 15px;
 }
@@ -37,8 +39,9 @@ H4{
     font-size: 25px;
 } */
 h2{
+    margin-top: 0%;
     text-align: center;
-    font-size: 25px;
+    font-size: 28px;
 
 }
 body{
@@ -49,6 +52,7 @@ body{
     margin-left:65%;
 }
 .H5{
+    margin-top: 0%;
     margin-left: 50px;
 }
 .lop{

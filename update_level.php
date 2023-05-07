@@ -71,7 +71,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                     </div>                                 
                                 </div>
                                 <div class="button">
-                                    <input type="submit" name="submit" value="CẬP NHẬT">
+                                    <input type="submit" name="submit" value="THÊM">
                                 </div>
                             </form>
                             <div class="trinhdo">
@@ -79,7 +79,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                     <tr>
                                         <td> <h3> MÃ TRÌNH ĐỘ </h3> </td>
                                         <td> <h3>TÊN TRÌNH ĐỘ </h3> </td>
-                                        <td></td>
+                                        <td> <h3>CHỨC NĂNG </h3> </td>
                                     </tr>
                                 </table>
                             </div>
@@ -119,7 +119,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>          
                             </ul>
                         </div>

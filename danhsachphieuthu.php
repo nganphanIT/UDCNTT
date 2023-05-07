@@ -21,11 +21,6 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
     <link rel="shortcut icon" href="favicon.ico" type="" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Export data</title>
-    <link rel="stylesheet" href="">
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -68,7 +63,7 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                                 <td>
                                     <h3> TTTT </h3>
                                 </td>
-                                <td class="min1"></td>
+                                <td class="min1"><h3> CHỨC NĂNG </h3></td>
                             </tr>
                         </table>
                     </div>
@@ -126,7 +121,8 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                         <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                         <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                         <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                        <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                        <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                        <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                         <li> <a href="login.php">ĐĂNG XUẤT</a></li>       
                     </ul>
                 </div>

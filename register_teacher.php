@@ -179,8 +179,20 @@ $query_exe1 = mysqli_query($conn, $qr_sttkhoa);
                                                 $ngaykg = $_GET['ngaykg'] ? $_GET['ngaykg'] : date('Y-m-d');
                                                 $sql = "SELECT * FROM `lop` LEFT JOIN khoahoc ON khoahoc.sttkhoa=lop.sttkhoa WHERE khoahoc.ngaykg >  '" . $ngaykg . "'";
                                                 $result = mysqli_query($conn, $sql);
-                                                while ($row = mysqli_fetch_array($result)) { ?>
-                                                    <option value="<?= $row['sttlop'] ?>"><?= $row['matd'] . $row['sttlop'] ?>
+                                                while ($row = mysqli_fetch_array($result)) { 
+                                                    $sttlop = $row['sttlop'];
+                                                    $siso =$row['siso'];
+                                                    $sql1 = "SELECT count(*) as num FROM `hocvien` WHERE sttlop= '$sttlop'";
+                                                    $result1 = mysqli_query($conn, $sql1);                                                  
+                                                    while ($row1 = mysqli_fetch_array($result1)){
+                                                        $num = $row1['num'];
+                                                        if($siso==$num){
+                                                            $tt='Lớp đầy';
+                                                        }
+                                                        else $tt = $num.'/'.$siso;
+                                                    }
+                                                    ?>
+                                                    <option value="<?= $row['sttlop'] ?>"><?= $row['matd'] . $row['sttlop'] .'  ('. $tt .')' ?>
                                                     </option>
                                                 <?php } ?>
                                             </select>
@@ -252,7 +264,6 @@ $query_exe1 = mysqli_query($conn, $qr_sttkhoa);
                         <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
                         <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
                         <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                        <li> <a href="list_student_teacher.php">HỌC VIÊN</a></li> 
                         <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
                         <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                     </ul>

@@ -665,7 +665,7 @@ form .user-details .input-box{
   font-size: 30px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-#myInput {
+#myInput, #myInput1 {
 	background-image: url('/css/searchicon.png'); /* Add a search icon to input */
 	background-position: 10px 12px; /* Position the search icon */
 	background-repeat: no-repeat; /* Do not repeat the icon image */
@@ -675,6 +675,26 @@ form .user-details .input-box{
 	border: 1px solid #ddd; /* Add a grey border */
 	margin-bottom: 12px; /* Add some space below the input */
   }
+.myInput{
+	display: flex;
+	width: 100%;
+}
+#fillsearch{
+	margin-top: 0px;
+	height: 40px;
+	width: 20%;
+	margin-left:5%;
+	outline: none;
+	color: linear-gradient(to bottom, #5151fa 0%, #0099ff 100%);
+	border: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: rgb(195, 195, 255); 
+	margin-right: 80px;
+} 
 
 /* .export{
     background-color: rgb(89, 248, 240);

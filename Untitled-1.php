@@ -2,7 +2,11 @@
 <html>
     <head>
         <title>HỆ THỐNG QUẢN LÍ GIẢNG DẠY TIN HỌC</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <link rel="stylesheet" href="main_admin_update.css" type=""> 
         <link rel="shortcut icon" href="favicon.ico" type=""/>
@@ -22,13 +26,33 @@
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
+                    <div class="group-box">
+                        <div class="title"> <b>THÔNG BÁO</b> </div>
+                        <a href="./sms.php" > <i class='fas fa-edit' style='font-size:24px; color:black'></i></a>
+                        <?php
+                            $conn = mysqli_connect("localhost", "root", "", "udcntt");
+                            mysqli_set_charset($conn, 'UTF8');
+                            $sql_sms = "select * from sms";
+                            $result_sms = mysqli_query($conn, $sql_sms);
+                            while ($row_sms = mysqli_fetch_array($result_sms)){
+                                $title = $row_sms['title'];  
+                                $content = $row_sms['content'];  
+                                ?> 
+                                <div>
+                                    <h3><?= $row_sms['title']?><h4><?= $row_sms['content']?></h4></h3>
+                                </div>
+                                <?php   
+
+                            }
+                        ?>
+                    </div>
                     <div class="big_title">LỊCH KHAI GIẢNG</div>
                     <div class="group-box">
                         <div class="title"> <b>ỨNG DỤNG CNTT CƠ BẢN</b> </div>
                         <h3 class="one">ỨNG DỤNG CNTT CƠ BẢN  </h3> 
                         <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
                         <p3 class="reone">56 tiết</p3> <br>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  $conn = mysqli_connect("localhost", "root", "", "udcntt");
@@ -161,7 +185,7 @@
                                                             ?>    
                                                     </td class="e">
                                                     <td ><?=$sttp ?></td>
-                                                    <td > <a href="./register.php"> <button class="button">ĐĂNG KÍ</button></a></td>
+                                                    <td > <a href="./register_student.php"> <button class="button">ĐĂNG KÍ</button></a></td>
                                                 </tr> 
                                             </table>
                                         </div>
@@ -177,7 +201,7 @@
                         <h3 class="one">ỨNG DỤNG CNTT NÂNG CAO</h3>
                         <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
                         <p3 class="reone">56 tiết</p3> <br>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  
@@ -210,8 +234,7 @@
                         <p3 class="three">&diams;  Đặc biệt giảm thêm&nbsp;</p3>
                         <p3 class="red"> 50.000đ khi đăng kí theo nhóm từ 3 học viên trở lên&nbsp;</p3>
                         <p3 class="four"> cho học viên cũ</p3> <br> 
-                        <p3 class="F">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b>&nbsp;</p3> </br> </br>
-
+                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <?php
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "SELECT * FROM sms";
@@ -313,7 +336,7 @@
                                                             ?>    
                                                     </td class="e">
                                                     <td ><?=$sttp ?></td>
-                                                    <td > <a href="./register.php"> <button class="button">ĐĂNG KÍ</button></a></td>
+                                                    <td > <a href="./register_student.php"> <button class="button">ĐĂNG KÍ</button></a></td>
                                                 </tr> 
                                             </table>
                                         </div>
@@ -329,7 +352,7 @@
                         <h3 class="one">ÔN THI CNTT CƠ BẢN VÀ NÂNG CAO</h3>
                         <p3 class="two"> &diams;  Số tiết:&nbsp;</p3> 
                         <p3 class="reone">25 tiết</p3> <br>
-                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3> 
+                        <p3 class="two"> &diams;  Học phí:&nbsp;</p3>
                         <p3 class="four"> 
                             <?php
                                  
@@ -448,7 +471,7 @@
                                                             ?>    
                                                     </td class="e">
                                                     <td ><?=$sttp ?></td>
-                                                    <td > <a href="./register.php"> <button class="button">ĐĂNG KÍ</button></a></td>
+                                                    <td > <a href="./register_student.php"> <button class="button">ĐĂNG KÍ</button></a></td>
                                                 </tr> 
                                             </table>
                                         </div>
@@ -459,15 +482,29 @@
   
                         ?>
                     </div>
+                                  
+               
+               
                 </div>
                 <div id="leftSide">
                     <div class="group-box">
                         <div class="title">DANH MỤC</div>
                         <div class="leftMenu">
                             <ul>
-                                <li> <a href="main_guest.php">TRANG CHỦ</a></li>
-                                <li> <a href="register.php">ĐĂNG KÍ</a></li>  
-                                <li> <a href="login.php">ĐĂNG NHẬP</a></li>     
+                                <li> <a href="main_admin.php">TRANG CHỦ</a></li>
+                                <li> <a href="course.php">KHÓA HỌC</a></li>
+                                <li> <a href="update_level.php">TRÌNH ĐỘ</a></li>
+                                <li> <a href="update_room.php">PHÒNG HỌC</a></li>
+                                <li> <a href="update_class.php">LỚP HỌC</a></li>
+                                <li> <a href="hocphi.php">HỌC PHÍ</a></li> 
+                                <li> <a href="update_timetable.php">LỊCH HỌC</a></li>
+                                <li> <a href="update_infor_teacher.php">GIẢNG VIÊN</a></li> 
+                                <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
+                                <li> <a href="list_student.php">HỌC VIÊN</a></li> 
+                                <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">ĐĂNG KÍ</a></li>  
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>    
                             </ul>
                         </div>
                     </div>
@@ -514,5 +551,32 @@
                 <p>Copyright &copy; 2021</p>
             </div>
         </div>
+    <script>
+        function deleteSMS(__this,id){
+        let elements = __this.parentElement;
+        let isConfirm =  confirm('Bạn có muốn xóa không?');
+            if(isConfirm){
+               let XMLHTTPRequest = new XMLHttpRequest();
+               let formData = new FormData();
+               formData.append("id",id);
+               XMLHTTPRequest.open('POST','functions/Ajax.php');
+               XMLHTTPRequest.onload = function(response) {
+                   if (this.responseText) {
+                    let data = JSON.parse(this.responseText);
+                        if (data.result ==="success"){
+                           elements.remove();
+                           alert(data.message); 
+                           location.reload();
+                        }
+                        else if(data.result ==="error"){
+                            alert(data.message); 
+                            location.reload();
+                        }
+                   } 
+               }
+               XMLHTTPRequest.send(formData);
+            }
+        }
+    </script> 
     </body>
     </html>

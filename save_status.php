@@ -23,5 +23,15 @@ $hpsv = $hocphi['hpsv'];
 $addPhieuThu = "INSERT INTO phieuthu (ngaylap, sotien, stthv)
 VALUES ('$date', '$hpsv', '$stthv')";
 $result = mysqli_query($conn, $addPhieuThu);
+if($result  == true){
+    $sttpt = $conn->insert_id;
+   
+}
+$addDienGiai = "INSERT INTO diengiai( diengiai, sttpt) VALUES ('Thu học phí lớp $matd$sttlop ',$sttpt)";
+$result1 = mysqli_query($conn, $addDienGiai);
+
+
+
+
 
 

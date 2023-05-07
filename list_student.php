@@ -146,7 +146,8 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                             <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                             <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                             <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                            <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                            <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                            <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                             <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                     </ul>
                 </div>
@@ -167,7 +168,6 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
 
         $('.btn-tt').click(function() {
             var row = $(this).closest('tr')
-            // var mssv = row.find('.mssv').text()
             var mssv = $(this).attr("data-mssv")
             $(this).text('Đã thanh toán')
             $(this).prop('disabled', true)
@@ -203,26 +203,7 @@ mysqli_query($conn, "SET NAMES 'UTF8'");
                 XMLHTTPRequest.send(formData);
             }
         }
-        // function myFunction() {
-        //     var input, filter, table, tr, td, i, txtValue;
-        //     input =  $("#myInput");
-        //     filter = input.value.toUpperCase();
-        //     table = document.getElementById("myTable");
-        //     tr = document.getElementsByTagName("tr");
-        //     for (i = 0; i < tr.length-1; i++) {
-        //         td = tr[i+1].getElementsByTagName("td")[3];
-        //         if (td) {
-        //             txtValue = td.textContent;
-        //             console.log(txtValue.toUpperCase().search(filter));
-        //             if (txtValue.toUpperCase().search(filter) > -1) {
-        //                 tr[i+1].style.display = "";
-        //             } else {
-        //                 tr[i+1].style.display = "none";
-        //             }
-        //         }
-        //     }
-        // }
-      
+   
         function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("myInput");

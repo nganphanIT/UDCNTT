@@ -24,8 +24,8 @@ $query_exe = mysqli_query($conn, $qr_hocvien);
                 <td><H4>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</H4></td>
             </tr>
             <tr>
-                <td><H4>TRUNG TÂM ĐIỆN TỬ VÀ TIN HỌC</H3> </td>
-                <td><H4> Độc Lập - Tự Do - Hạnh Phúc</H3></td>
+                <td><H4>TRUNG TÂM ĐIỆN TỬ VÀ TIN HỌC</H4></td>
+                <td><H4> Độc Lập - Tự Do - Hạnh Phúc</H4></td>
             </tr>
         </table>
         <?php
@@ -70,6 +70,13 @@ $query_exe = mysqli_query($conn, $qr_hocvien);
                             while ($row3 = mysqli_fetch_array($result3)) {
                                 $ngaykg=$row3['ngaykg'];
                                 $ngaykt=$row3['ngaykt'];
+                                $sql4 = "SELECT * FROM diengiai where sttpt=$sttpt limit 1";
+                                $result4 = mysqli_query($conn, $sql4);
+                                while ($row4 = mysqli_fetch_array($result4)){
+                                    $diengiai=$row4['diengiai'];
+                                }
+
+
                             }
                         }
                         
@@ -80,6 +87,7 @@ $query_exe = mysqli_query($conn, $qr_hocvien);
                                 <h4>Ngày sinh: <?= $ngaysinh ?></h4>
                                 <h4>Số tiền: <?= number_format($hpsv),"    đồng" ?></h4>
                                 <h4>Ngày khai giảng: <?= $ngaykg ?></h4>
+                                <h4>Diễn giải thu: <?= $diengiai?> </h4>
                                 <h4> 
                                     <p>Phòng học: <?= $sttp ?></p> 
                                     <p>Lịch học: 

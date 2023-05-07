@@ -157,7 +157,7 @@ if (isset($_POST["submit"])) {
                                                         <span class="details">SỐ TÀI KHOẢN (Sacombank)</span>
                                                         <input type="num" name="sotk" placeholder="Nhap so tai khoan..." required>
                                                     </div>
-                                                    <div class="input-box">
+                                                    <!-- <div class="input-box">
                                                         <span class="details">TRÌNH ĐỘ HỌC VẪN</span>
                                                         <input type="text" name="tdhv" placeholder="Nhap trinh do hoac chuc danh..." required>
                                                     </div>
@@ -172,7 +172,7 @@ if (isset($_POST["submit"])) {
                                                     <div class="input-box">
                                                         <span class="details">HỆ SỐ LƯƠNG</span>
                                                         <input type="text" name="luong" placeholder="Nhap trinh do hoac chuc danh..." required>
-                                                    </div>
+                                                    </div> -->
 
                                                     <!-- <h2>2. Trình độ chuyên môn</h2>
                                                     <h4> - Trình độ học vấn : </h4>
@@ -188,10 +188,12 @@ if (isset($_POST["submit"])) {
                                             </div>                                                                       
                                         </div>
                                         <div class="button">
-                                            <input name="submit" type="submit" value="CẬP NHẬT">
+                                            <input name="submit" type="submit" value="THÊM">
                                             <input type="reset" name="reset" value="HỦY"> 
                                         </div> 
                                     </form>
+                                    <span></span>
+                                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm số điện thoại  ...">
                                     <div class="thongtin">
                                         <table>
                                             <tr>
@@ -252,7 +254,8 @@ if (isset($_POST["submit"])) {
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>         
                             </ul>
                         </div>
@@ -267,6 +270,25 @@ if (isset($_POST["submit"])) {
         </div> 
     </body>
     <script>
+         function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = document.getElementsByTagName("tr");
+            for (i = 0; i < tr.length-1; i++) {
+                td = tr[i+1].getElementsByTagName("td")[3];
+                if (td) {
+                    txtValue = td.textContent;
+                    console.log(txtValue.toUpperCase().search(filter));
+                    if (txtValue.toUpperCase().search(filter) > -1) {
+                        tr[i+1].style.display = "";
+                    } else {
+                        tr[i+1].style.display = "none";
+                    }
+                }
+            }
+        }
 		function displayImage(event) {
 			var image = document.getElementById('image-preview');
 			image.src = URL.createObjectURL(event.target.files[0]);

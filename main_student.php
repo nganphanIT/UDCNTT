@@ -76,7 +76,7 @@
                         <p3 class="three">&diams;  Đặc biệt giảm thêm&nbsp;</p3>
                         <p3 class="red"> 50.000đ khi đăng kí theo nhóm từ 3 học viên trở lên&nbsp;</p3>
                         <p3 class="four"> cho học viên cũ</p3> <br>
-                        <p3 class="F">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b>&nbsp;</p3> </br> </br>
+                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <?php
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "SELECT * FROM sms";
@@ -212,7 +212,6 @@
                         </p3> </br> 
                         <p3 class="two"> &diams;  Nội dung học:&nbsp;</p3> 
                         <p3 class="four"> Word - Excel - PowerPonit nâng cao</p3> </br>
-                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <p3 class="two"> &diams;  Điều kiện bắt buộc:&nbsp;</p3> 
                         <p3 class="red"> HV cần bổ sung Chứng chỉ Ứng Dụng CNTT Cơ Bản (photo công chứng) khi đăng kí</p3> </br>
                         <p3 class="two">&diams;  Ưu đãi khi ghi danh online + hoàn tất học phí&nbsp;</p3>
@@ -225,7 +224,8 @@
                         <p3 class="four"> cho học viên cũ</p3> <br>
                         <p3 class="three">&diams;  Đặc biệt giảm thêm&nbsp;</p3>
                         <p3 class="red"> 50.000đ khi đăng kí theo nhóm từ 3 học viên trở lên&nbsp;</p3>
-                        <p3 class="four"> cho học viên cũ</p3> <br> </br>
+                        <p3 class="four"> cho học viên cũ</p3> <br>
+                        <p3  class="two">&diams;<b>  Lưu ý: HV sẽ thi trực tiếp tại phòng máy thực hành TTTH</b> </br>
                         <?php
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "SELECT * FROM sms";

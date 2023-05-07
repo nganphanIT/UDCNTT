@@ -65,6 +65,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <td class="a"> <h3> MÃ LỚP  </h3> </td>
                                         <td class="b"> <h3> THỨ </h3> </td>
                                         <td class="c"> <h3> BUỔI </h3> </td>
+                                        <td class="b"> <h3> PHÒNG </h3> </td>
                                     </tr>
                                 </table>
                             </div>
@@ -73,13 +74,24 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                             mysqli_set_charset($conn, 'UTF8');
                             $sql = "select b.id as id_thu ,c.id as id_buoi , b.thu,c.buoi,d.matd,d.sttlop,c.gio_bd,c.gio_kt from lichhoc as a, thu as b, buoi as c, lop as d where a.thu=b.id and a.buoi=c.id and a.sttlop=d.sttlop";
                             $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) { ?>
+                            while ($row = mysqli_fetch_array($result)) {
+                                $sttlop=$row['sttlop']; ?>
                                 <div class="lop">
                                     <table>
                                         <tr>
                                             <td class="a"><?= $row['matd']. $row['sttlop']?></td>
                                             <td class="b"><?= $row['thu']?></td>
-                                            <td class="c"><?= $row['buoi']?></td>
+                                            <td class="c"><?= $row['buoi']."(".$row['gio_bd']."-".$row['gio_bd'].")"?></td>
+                                            <td class="b"><?php
+                                                $sql1 = "select * from lop where sttlop='$sttlop'";
+                                                $result1 = mysqli_query($conn, $sql1);
+                                                while ($row1 = mysqli_fetch_array($result1)){
+                                                    $sttp =$row1['sttp'];
+                                                     echo $sttp;
+                                                }
+                                               
+                                            ?></td>
+
                                         </tr> 
                                     </table>
                                 </div>

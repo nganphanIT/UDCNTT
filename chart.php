@@ -115,7 +115,8 @@
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
                                 <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
-                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>          
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>           
                             </ul>
                         </div>
                     </div>

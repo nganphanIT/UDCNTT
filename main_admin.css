@@ -773,4 +773,44 @@ form .user-details .input-box{
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  
+  .btn{
+	margin-top: 20px;
+	height: 30px;
+	width: 10%;
+	margin-left:5%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: linear-gradient(to bottom, #5151fa 0%, #0099ff 100%);
+	margin-right: 80px;
+} 
+
+.btn_2{
+	height: 50px;
+	width: 200px;
+	margin-left:35%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: linear-gradient(to bottom, #5151fa 0%, #0099ff 100%);
+	
+} 
+.bt{
+	display: flex;
+	width: 100%;
+}
+.fa-reply{
+	font-size:36px;
+	margin-left:0%;
+	color:  #0099ff;
+}

@@ -55,7 +55,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                         ?>
                         <div >
                             <table >
-                                <td class="a"><?=$row['macb'] ?></td> 
+                                <td class="a"><?="CB00".$row['macb'] ?></td> 
                                 <td class="b1"><?=$row['hoten'] ?></td>
                                 <td class="c" ><?=$row['ngaysinh'] ?></td> 
                                 <td class="d1"><?=$row['sdt'] ?></td>

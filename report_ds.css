@@ -30,43 +30,82 @@ H4{
    
 }
 .b{
-    width: 2%;
+    width: 4%;
     text-align: center;
 }
 .a{
-    width: 5%;
+    width: 2.5%;
+    text-align: left;
+}
+.a1{
+    width: 2.5%;
     text-align: center;
 }
 .g{
-    width: 5%;
-    text-align: center;
-}
-.d,.i{
-    width: 6%;
+    width: 3%;
     text-align: left;
 }
-.c,.f, .h,.j{
-    width: 17%;
+.d{
+    width: 6%;
     text-align: center;
 }
 
-.c1,.f1, .h1, .j1{
-    width: 15%;
+.d1{
+    width: 7%;
     text-align: left;
-    margin-left: 0%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.e{
+.i{
+    width: 9%;
+    text-align: center;
+}
+.i1{
+    width: 9%;
+    text-align: left;
+}
+/* .j{
     width: 10%;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} */
+.j1{
+   
+    text-align: left;
 }
-.e1{
+
+.h{
+    width: 22%; 
+    text-align: center;
+    
+}
+.h1{
+    width: 22%; 
+    text-align: left;
+    
+}
+.f{
     width: 10%;
-    text-align: right;
-    margin-right: 0%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
 }
+.f1{
+    width: 10%;
+    text-align: left;
+}
+
+.c1{
+    width: 17%; 
+    text-align: left;
+    
+}
+.c{
+    width: 17%; 
+    text-align: center;
+    
+}
+
+.e{
+    width: 8%;
+    text-align: left;
+}
+
 button{
     background-color: rgb(89, 248, 240);
     font-weight: bold;

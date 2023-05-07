@@ -76,7 +76,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                             <?php while($rows = mysqli_fetch_array($query_exe)) {
                                                     $sttkhoa=$rows['sttkhoa']; 
                                                 ?>
-                                                <option value="<?= $rows['sttkhoa'] ?>"><?= $rows['sttkhoa'] ?></option>
+                                                <option value="<?= $rows['sttkhoa'] ?>"><?= 'Khóa ',$rows['sttkhoa'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -85,13 +85,13 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <select class="list" name="matd">
                                         <option value="">Chọn trình độ</option>
                                             <?php while($rows = mysqli_fetch_array($query_exe1)) {?>
-                                                <option value="<?= $rows['matd'] ?>"><?= $rows['matd'] ?></option>
+                                                <option value="<?= $rows['matd'] ?>"><?= $rows['tentd'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">SỈ SỐ</span>
-                                        <input type="text" name="siso" placeholder="Nhap si so toi da..." required>
+                                        <input type="num" name="siso" placeholder="Nhap si so toi da..." required>
                                     </div>
                                     <div class="input-box">
                                         <span class="details">PHÒNG HỌC</span>
@@ -108,15 +108,25 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <select class="list" name="macb">
                                         <option value="">Chọn giảng viên</option>
                                             <?php while($rows = mysqli_fetch_array($query_exe2)) {?>
-                                                <option value="<?="CB",$rows['macb'] ?>"><?="CB",$rows['macb'] ?></option>
+                                                <option value="<?="CB",$rows['macb'] ?>"><?=$rows['hoten'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>                                   
                                 </div>
                                 <div class="button">
-                                    <input type="submit" name="submit" value="CẬP NHẬT">
+                                    <input type="submit" name="submit" value="THÊM">
                                 </div>
                             </form>
+                            <span></span>
+                            <div class="myInput">
+                                <input type="text" id="myInput" onkeyup="newSearch()" placeholder="Tìm kiếm...">
+                                <!-- <input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Tìm kiếm cán bộ  ..."> -->
+                                <!-- <input type="text" id="myInput" placeholder="Tìm kiếm ..."> -->
+                                <select class="list" id="fillsearch">
+                                        <option value="0"  >Tìm cán bộ</option>
+                                        <option value="1"  >Tìm khóa học</option>
+                                </select>
+                            </div>
                             <div class="lop">
                                 <table>
                                     <tr>
@@ -174,7 +184,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>       
                             </ul>
                         </div>
@@ -188,6 +199,60 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
             </div>
         </div> 
         <script>
+            function myFunction1() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = document.getElementsByTagName("tr");
+                for (i = 0; i < tr.length-1; i++) {
+                    td = tr[i+1].getElementsByTagName("td")[4];
+                    if (td) {
+                        txtValue = td.textContent;
+                        console.log(txtValue.toUpperCase().search(filter));
+                        if (txtValue.toUpperCase().search(filter) > -1) {
+                            tr[i+1].style.display = "";
+                        } else {
+                            tr[i+1].style.display = "none";
+                        }
+                    }
+                }
+            }
+
+        function newSearch(){
+
+            var e = document.getElementById("fillsearch");
+            var a = e.value;
+            if(a == 0){
+            myFunction1();
+        //    console.log(a);
+            }else if(a == 1){
+               myFunction();
+        //    console.log(a);
+
+            }
+            
+        }
+        
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = document.getElementsByTagName("tr");
+            for (i = 0; i < tr.length-1; i++) {
+                td = tr[i+1].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent;
+                    console.log(txtValue.toUpperCase().search(filter));
+                    if (txtValue.toUpperCase().search(filter) > -1) {
+                        tr[i+1].style.display = "";
+                    } else {
+                        tr[i+1].style.display = "none";
+                    }
+                }
+            }
+        }
             function deleteclass(__this,id){
             let elements = __this.parentElement;
             let isConfirm =  confirm('Bạn có muốn xóa không?');

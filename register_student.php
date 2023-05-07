@@ -110,8 +110,8 @@ if (isset($_POST["submit"])) {
         }
     }
 }
-$max = "Select count(*) as tonghocvien from hocvien where sttlop = 'CB3'";
-$count = "Select siso from lop where sttlop = 3 and matd = 'CB'";
+// $max = "Select count(*) as tonghocvien from hocvien where sttlop = 'CB3'";
+// $count = "Select siso from lop where sttlop = 3 and matd = 'CB'";
 
 $qr_malop = "SELECT * FROM lop";
 $query_exe = mysqli_query($conn, $qr_malop);
@@ -171,7 +171,7 @@ $query_exe1 = mysqli_query($conn, $qr_sttkhoa);
                                     </div>  
                                     <div class="flex-item">
                                         <div class="input-box">
-                                            <span class="details">STT LỚP</span>
+                                            <span class="details">LỚP HỌC</span>
                                             <select class="list" style="font-size: 20px;" name="sttlop">
                                                 <option value="">Chọn lớp</option>
                                                 <?php $conn = mysqli_connect("localhost", "root", "", "udcntt");
@@ -179,8 +179,20 @@ $query_exe1 = mysqli_query($conn, $qr_sttkhoa);
                                                 $ngaykg = $_GET['ngaykg'] ? $_GET['ngaykg'] : date('Y-m-d');
                                                 $sql = "SELECT * FROM `lop` LEFT JOIN khoahoc ON khoahoc.sttkhoa=lop.sttkhoa WHERE khoahoc.ngaykg >  '" . $ngaykg . "'";
                                                 $result = mysqli_query($conn, $sql);
-                                                while ($row = mysqli_fetch_array($result)) { ?>
-                                                    <option value="<?= $row['sttlop'] ?>"><?= $row['matd'] . $row['sttlop'] ?>
+                                                while ($row = mysqli_fetch_array($result)) { 
+                                                    $sttlop = $row['sttlop'];
+                                                    $siso =$row['siso'];
+                                                    $sql1 = "SELECT count(*) as num FROM `hocvien` WHERE sttlop= '$sttlop'";
+                                                    $result1 = mysqli_query($conn, $sql1);                                                  
+                                                    while ($row1 = mysqli_fetch_array($result1)){
+                                                        $num = $row1['num'];
+                                                        if($siso==$num){
+                                                            $tt='Lớp đầy';
+                                                        }
+                                                        else $tt = $num.'/'.$siso;
+                                                    }
+                                                    ?>
+                                                    <option value="<?= $row['sttlop'] ?>"><?= $row['matd'] . $row['sttlop'] .'  ('. $tt .')' ?>
                                                     </option>
                                                 <?php } ?>
                                             </select>
@@ -258,7 +270,8 @@ $query_exe1 = mysqli_query($conn, $qr_sttkhoa);
                         <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                         <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                         <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                        <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
+                        <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                        <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
                         <li> <a href="login.php">ĐĂNG XUẤT</a></li>     
                     </ul>
                 </div>
