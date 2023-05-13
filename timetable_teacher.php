@@ -52,7 +52,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav">  
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>            
+         
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -75,6 +77,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "udcntt");
                             mysqli_set_charset($conn, 'UTF8');
+                            // $canbo = $canbo['macb'];
                             $sql = "select b.id as id_thu ,c.id as id_buoi , b.thu,c.buoi,d.matd,d.sttlop,c.gio_bd,c.gio_kt from lichhoc as a, thu as b, buoi as c, lop as d where a.thu=b.id and a.buoi=c.id and a.sttlop=d.sttlop";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
@@ -116,9 +119,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="main_teacher.php">TRANG CHỦ</a></li>
                                 <li> <a href="class_teacher.php">LỚP HỌC</a></li>
                                 <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
-                                <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
-                                <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                                <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
+                                 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                             </ul>
                         </div>

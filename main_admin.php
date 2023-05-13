@@ -12,22 +12,31 @@
         <link rel="shortcut icon" href="favicon.ico" type=""/>
     </head>
     <body>
+      
         <div id="pageWrapper">
             <div id="header"> 
                 <img  id="header" src="./img/header.png" alt="">
                 <img id="logo" src="./img/logo.png" >
                 <div id="siteTitle2">
                     <p>TRUNG TÂM TIN HỌC CẦN THƠ</p>
+                    
                 </div>
-
-                <img id="logo2" src="./img/logo2.png">
+                
+        <div>
+           
+        <img id="logo2" src="./img/logo2.png">  
+       
+        </div>
+      
             </div>
-            <div id="nav">         
+            <div  id="nav">       
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>  
             </div>        
             <div id="contentWrapper">
                 <div id="mainContent">
                     <div class="group-box">
                         <div class="title"> <b>THÔNG BÁO</b> </div>
+                    
                         <a href="./sms.php" > <i class='fas fa-edit' style='font-size:24px; color:black'></i></a>
                         <?php
                             $conn = mysqli_connect("localhost", "root", "", "udcntt");

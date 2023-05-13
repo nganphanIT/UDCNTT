@@ -92,7 +92,9 @@ if (isset($_POST["submit"])) {
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav">  
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>  
+         
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">

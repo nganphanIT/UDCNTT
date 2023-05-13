@@ -77,6 +77,7 @@
                                     datasets: [{
                                       label: 'BIỂU ĐỒ THỐNG KÊ HỌC VIÊN THEO TỪNG LỚP',
                                       data: yrr,
+                                      backgroundColor: ["#cc66ff", "#99ff66", "#00ffff", "#ffcc66", "#9966ff", "#00cc66","#ccff33","orange","Brown","Turquoise","Avocado"],
                                       borderWidth: 1
                                     }]
                                   },

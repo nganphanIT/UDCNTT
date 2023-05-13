@@ -64,7 +64,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav">     
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>  
+      
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -100,7 +102,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                         <div class="title">DANH MỤC</div>
                         <div class="leftMenu">
                             <ul>
-                                <li> <a href="main_admin.php">TRANG CHỦ</a></li>
+                            <li> <a href="main_admin.php">TRANG CHỦ</a></li>
                                 <li> <a href="course.php">KHÓA HỌC</a></li>
                                 <li> <a href="update_level.php">TRÌNH ĐỘ</a></li>
                                 <li> <a href="update_room.php">PHÒNG HỌC</a></li>
@@ -111,8 +113,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="register_student.php">ĐĂNG KÍ</a></li>  
                                 <li> <a href="list_student.php">HỌC VIÊN</a></li> 
                                 <li> <a href="danhsachphieuthu.php">PHIẾU THU</a></li>  
-                                <li> <a href="statistical_class.php">BÁO CÁO THỐNG KÊ </a></li>
-                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>   
+                                <li> <a href="choose_year.php">BÁO CÁO THỐNG KÊ </a></li>
+                                <li> <a href="signup.php">TẠO TÀI KHOẢN</a></li> 
+                                <li> <a href="login.php">ĐĂNG XUẤT</a></li>  
                             </ul>
                         </div>
                     </div>

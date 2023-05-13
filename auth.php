@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($row['password'] == $pass) {
             $arr = [
                 'username'    => $row['username'],
+                'email' => $row['email']
             ];
             $_SESSION['admin'] = $arr;
             if ($row['role'] == 0) {

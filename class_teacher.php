@@ -31,8 +31,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
     $query_exe = mysqli_query($conn, $qr_khoa);
     $qr_td = 'SELECT *FROM trinhdo';	
     $query_exe1 = mysqli_query($conn, $qr_td);    
-    $qr_cb = 'SELECT *FROM canbo';	
+    $qr_cb = "SELECT *FROM canbo where `email` ='".$_SESSION['admin']['email']."'";
     $query_exe2 = mysqli_query($conn, $qr_cb);
+    $canbo = mysqli_fetch_array($query_exe2);
     $qr_sttlop = 'SELECT *FROM lop';	
     $query_exe3 = mysqli_query($conn, $qr_sttlop); 
     $qr_sttp = 'SELECT *FROM phong';	
@@ -60,7 +61,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav">       
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>            
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -69,7 +71,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                         <div class="container">
                             <div class="myInput">
                                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm kiếm khóa học  ...">
-                                <input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Tìm kiếm cán bộ  ...">
+                                <!-- <input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Tìm kiếm cán bộ  ..."> -->
                             </div>
                             <div class="lop">
                                 <table>
@@ -79,23 +81,30 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <td class="" > <h3> SỐ PHÒNG </h3> </td>
                                         <td class="" > <h3> SỈ SỐ </h3> </td>
                                         <td class="">  <h3> CÁN BỘ </h3> </td>
+                                        <td class="">  <h3> DANH SÁCH HV </h3> </td>
+                                      
                                     </tr>
                                 </table>
                             </div>
                             <?php
-                            $conn = mysqli_connect("localhost", "root", "", "udcntt");
-                            mysqli_set_charset($conn, 'UTF8');
-                            $sql = "SELECT * FROM lop";
+                            $canbo = $canbo['macb'];
+                            $sql = "SELECT * FROM lop where `macb` = $canbo ";                     
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) { ?>
                             <div class="lop">
                                 <table>
                                     <tr>
+                                        
                                         <td class=""><?= $row['sttkhoa']?></td>
                                         <td class=""><?= $row['matd']. $row['sttlop']?></td>
                                         <td class=""><?= $row['sttp']?></td>
                                         <td class=""><?= $row['siso']?></td>
                                         <td class=""><?= $row['macb']?></td>
+                                        <td class="min1"> <a href="./report_dshv_lop.php?sttlop=<?php echo $row['sttlop']  ?>">
+                                        <i class="material-icons" style="font-size:24px;color:#3366cc">receipt</i>
+                                        </a>
+                                        
+                                        </td>
                                     </tr> 
                                 </table>
                             </div>
@@ -116,9 +125,6 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                 <li> <a href="main_teacher.php">TRANG CHỦ</a></li>
                                 <li> <a href="class_teacher.php">LỚP HỌC</a></li>
                                 <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
-                                <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
-                                <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>  
-                                <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>          
                             </ul>
                         </div>

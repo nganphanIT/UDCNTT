@@ -52,7 +52,9 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav"> 
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>            
+          
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -113,7 +115,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                             <ul>
                                 <li> <a href="main_student.php">TRANG CHỦ</a></li>
                                 <li> <a href="timetable_student.php">LỊCH HỌC</a></li>
-                                <li> <a href="student_register.php">ĐĂNG KÍ</a></li>  
+                                <!-- <li> <a href="student_register.php">ĐĂNG KÍ</a></li>   -->
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>        
                             </ul>
                         </div>

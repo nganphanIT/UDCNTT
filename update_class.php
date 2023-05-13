@@ -20,6 +20,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
         }else{
                   $sql = "INSERT INTO lop(sttp,macb,sttkhoa,matd,siso) VALUES ('$sttp','$macb','$sttkhoa','$matd','$siso')";
                    mysqli_query($conn,$sql);
+                   
                   $sql1 ="UPDATE phong SET trangthai='1' WHERE sttp=$sttp";
                     echo '<script>
                         alert("Tạo lớp thành công!");
@@ -60,7 +61,8 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                 </div>
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav">   
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>          
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -108,7 +110,7 @@ mysqli_query($conn,"SET NAMES 'UTF8'");
                                         <select class="list" name="macb">
                                         <option value="">Chọn giảng viên</option>
                                             <?php while($rows = mysqli_fetch_array($query_exe2)) {?>
-                                                <option value="<?="CB",$rows['macb'] ?>"><?=$rows['hoten'] ?></option>
+                                                <option value="<?=$rows['macb'] ?>"><?=$rows['hoten'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>                                   

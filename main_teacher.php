@@ -18,7 +18,8 @@
 
                 <img id="logo2" src="./img/logo2.png">
             </div>
-            <div id="nav">         
+            <div id="nav">   
+            <h3 style="color:white;margin-left:80%;margin-top:-5px"><?php echo $_SESSION['admin']['email'] ?></h3>  
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
@@ -486,9 +487,7 @@
                                 <li> <a href="main_teacher.php">TRANG CHỦ</a></li>
                                 <li> <a href="class_teacher.php">LỚP HỌC</a></li>
                                 <li> <a href="timetable_teacher.php">LỊCH HỌC</a></li>
-                                <li> <a href="infor_teacher.php">GIẢNG VIÊN</a></li> 
-                                <li> <a href="register_teacher.php">ĐĂNG KÍ</a></li>   
-                                <li> <a href="list_bill_teacher.php">PHIẾU THU</a></li>  
+                                 
                                 <li> <a href="login.php">ĐĂNG XUẤT</a></li>     
                             </ul>
                         </div>

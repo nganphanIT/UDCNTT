@@ -46,7 +46,8 @@
                
                 <img id="logo2" src="./img/logo2.png" >
             </div>
-            <div id="nav">           
+            <div id="nav"> 
+
             </div>         
             <div id="contentWrapper">
                 <div id="mainContent">
